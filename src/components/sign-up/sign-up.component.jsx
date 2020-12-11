@@ -26,6 +26,7 @@ class SignUp extends React.Component {
 
     if (password !== confirmPassword) {
       alert("passwords don't match");
+      return;
     }
 
     try {
@@ -45,7 +46,7 @@ class SignUp extends React.Component {
     }
   };
 
-  handleChagne = (event) => {
+  handleChange = (event) => {
     const { name, value } = event.target;
 
     this.setState({ [name]: value });
@@ -62,7 +63,7 @@ class SignUp extends React.Component {
             type="text"
             name="displayName"
             value={displayName}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             label="Display Name"
             required
           ></FormInput>
@@ -70,7 +71,7 @@ class SignUp extends React.Component {
             type="email"
             name="email"
             value={email}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             label="Email"
             required
           ></FormInput>
@@ -78,15 +79,15 @@ class SignUp extends React.Component {
             type="password"
             name="password"
             value={password}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             label="Password"
             required
           ></FormInput>
           <FormInput
             type="password"
-            name="password"
+            name="confirmPassword"
             value={confirmPassword}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             label="Confirm Password"
             required
           ></FormInput>
